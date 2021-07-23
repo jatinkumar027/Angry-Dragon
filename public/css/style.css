@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 35vw;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2vw;
+}
+
+.heading {
+  margin-bottom: 5px;
+}
+
+.point-1,
+.point-2,
+.point-3 {
+  font-size: 4vh;
+  margin: 5px;
+}
+
+.gameContainer {
+  background: url(../../images/bg.jpg) no-repeat center;
+  background-size: 100%;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dino {
+  position: absolute;
+  background: url(../../images/dinosaur.png) no-repeat;
+  background-size: 100%;
+  width: 14vw;
+  height: 29vh;
+  bottom: 45px;
+  right: 0;
+  transform: scaleX(-1);
+}
+.person {
+  position: absolute;
+  background: url(../../images/person.png) no-repeat;
+  background-size: 100%;
+  width: 14vw;
+  height: 34vh;
+  bottom: 45px;
+  transform: scaleX(-1);
+}
+
+.personAnimation {
+  animation: personanimate 0.6s linear;
+}
+
+.dinoAnimation {
+  animation: dinoanimate 0.6s linear infinite;
+  animation-duration: 5s;
+}
+.dinoPaused {
+  animation-play-state: paused;
+}
+.gameOver {
+  width: 40px;
+  height: 40px;
+}
+.personGameOverAnimation {
+  animation: personGameOverAnimate 3s ease-out;
+}
+
+.score {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2vw;
+}
+
+.gameOver {
+  display: none;
+  position: absolute;
+  width: 22vw;
+  height: 15vh;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+  font-size: 2vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+@keyframes personanimate {
+  0% {
+    bottom: 45px;
+  }
+  50% {
+    bottom: 400px;
+  }
+  100% {
+    bottom: 45px;
+  }
+}
+
+@keyframes dinoanimate {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: -10vw;
+  }
+}
+
+@keyframes personGameOverAnimate {
+  0% {
+    bottom: 45px;
+    transform: scaleX(-1);
+  }
+  50% {
+    bottom: 300px;
+    transform: scaleX(-1);
+  }
+  50.1% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    bottom: -450px;
+  }
+}
