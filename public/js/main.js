@@ -13,7 +13,10 @@ var start = true;
 var scoreValue = 0;
 var cross = true;
 
-audio = new Audio("audio/gameOver.mp3");
+audioGameOver = new Audio("audio/gameOver.mp3");
+audioKeyPress = new Audio("audio/keyPress.mp3");
+
+// Listening the Keydown events and executing commands based on that
 
 const keyEvent = document.addEventListener("keydown", (e) => {
   if (start) {
@@ -47,6 +50,7 @@ const keyEvent = document.addEventListener("keydown", (e) => {
         dino.classList.add("dinoPaused");
       }
     } else if (e.key === "ArrowLeft") {
+      audioKeyPress.play();
       leftValue = parseInt(
         window.getComputedStyle(person, null).getPropertyValue("left")
       );
@@ -55,6 +59,7 @@ const keyEvent = document.addEventListener("keydown", (e) => {
         person.style.transform = "scaleX(1)";
       }
     } else if (e.key === "ArrowRight") {
+      audioKeyPress.play();
       leftValue = parseInt(
         window.getComputedStyle(person, null).getPropertyValue("left")
       );
@@ -65,6 +70,8 @@ const keyEvent = document.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// When the man crosses the Dragon
 
 const crossFunction = setInterval(() => {
   dinoX = parseInt(
@@ -96,7 +103,7 @@ const crossFunction = setInterval(() => {
     setTimeout(() => {
       person.style.display = "none";
     }, 3000);
-    audio.play();
+    audioGameOver.play();
   } else if (offsetX < 150 && cross) {
     scoreValue += 1;
     score.innerHTML = "Your Score: " + scoreValue;
