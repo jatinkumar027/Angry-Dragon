@@ -6,7 +6,7 @@ A fun and interactive game made with the help of HTML, CSS and Javascript
 HTML, CSS, Javascript
 
 ## Usage
-Just run the index.html file and you will able to play the coolest game ever
+Just run the index.html file and you will be able to play the coolest game ever
 
 ## Screenshot
 ![Screenshot](https://github.com/jatinkumar027/AngryDragon/blob/main/Screenshot.png?raw=true)
